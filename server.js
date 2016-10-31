@@ -20,7 +20,7 @@ app.get('/:id', function(req, res){
 		res.redirect(adds[id][1])
 	} else {
 		var host = req.headers.host;
-		res.send('NO such shorten address!<br /><a href="'+req.headers.host+'">Home Page</a>');
+		res.send('NO such shorten address!');
 	}
 });
 
