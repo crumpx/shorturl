@@ -1,0 +1,52 @@
+doctype html
+html
+	head
+		link(href='/css/main.css', rel='stylesheet')
+		link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+		title Url Shorten Service
+	body
+		.container
+			.header
+				img(src='https://avatars.githubusercontent.com/u/4764314?v=3')
+				.icons
+					a(href='https://www.facebook.com/crumpx')
+						span.fa-stack.fa-lg
+							i.fa.fa-square-o.fa-stack-2x
+							i.fa.fa-facebook.fa-stack-1x
+
+					a(href='https://www.twitter.com/crumpz')
+						span.fa-stack.fa-lg
+							i.fa.fa-square-o.fa-stack-2x
+							i.fa.fa-twitter.fa-stack-1x
+
+					a(href='https://github.com/crumpx')
+						span.fa-stack.fa-lg
+							i.fa.fa-square-o.fa-stack-2x
+							i.fa.fa-github.fa-stack-1x		
+
+					a(href='https://www.linkedin.com/in/gang-zhao-198201')
+						span.fa-stack.fa-lg
+							i.fa.fa-square-o.fa-stack-2x
+							i.fa.fa-linkedin.fa-stack-1x			
+					
+
+				h1 FCC URL Shortener Microservice
+			.instructions
+				blockquote
+					h2 User stories:
+					ul
+						li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+						li When I visit that shortened URL, it will redirect me to my original link.
+				.explain
+					h2 Example creation usage:
+					p #{host}/short/https://www.google.com
+					p #{host}/short/https://www.facebook.com
+					h2 Example creation output
+					p {"original_url":"http://www.google.com","short_url":"localhost:8080/5904"}
+					h2 Shorten link:
+					p #{host}/5904
+			.history
+				h2 History
+				ol			
+					each add, i in adds
+						li #{host}/#{add[0]} ==> #{add[1]}
