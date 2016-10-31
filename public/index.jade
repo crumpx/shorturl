@@ -28,7 +28,7 @@ html
 						span.fa-stack.fa-lg
 							i.fa.fa-square-o.fa-stack-2x
 							i.fa.fa-linkedin.fa-stack-1x			
-					
+				p Created by Gang Zhao	
 
 				h1 FCC URL Shortener Microservice
 			.instructions
@@ -50,4 +50,5 @@ html
 				ol			
 					each add, i in adds
 						li 
-							a(href="http://#{host}/#{add[0]}/") http://#{host}/#{add[0]} ==> #{add[1]}
+							a(href="http://#{host}/#{add[0]}/") http://#{host}/#{add[0]}
+							span  ==> #{add[1]}

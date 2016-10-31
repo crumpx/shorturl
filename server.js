@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-
+var port = process.env.PORT || 8080
 var adds = {};
 
 app.set('view engine', 'jade');
@@ -39,6 +39,6 @@ app.get('/short/*', function(req, res){
 		+'/">'+result.short_url+'</a><br><br><a href="http://'+req.headers.host+'/">Home Page</a>');
 });
 
-app.listen(8080, function(){
-	console.log('Server running on 8080');
+app.listen(port, function(){
+	console.log('Server running');
 });
