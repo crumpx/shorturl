@@ -49,4 +49,5 @@ html
 				h2 History
 				ol			
 					each add, i in adds
-						li #{host}/#{add[0]} ==> #{add[1]}
+						li 
+							a(href="http://#{host}/#{add[0]}/") http://#{host}/#{add[0]} ==> #{add[1]}
