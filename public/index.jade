@@ -48,7 +48,7 @@ html
 			.history
 				h2 History
 				ol			
-					each add, i in adds
+					each add in adds
 						li 
-							a(href="http://#{host}/#{add[0]}/") http://#{host}/#{add[0]}
-							span  ==> #{add[1]}
+							a(href="#{add.short_url}/") #{add.short_url}
+							span  ==> #{add.original_url}
