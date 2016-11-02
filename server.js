@@ -3,8 +3,8 @@ var app = express();
 var path = require('path');
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
-
-var adds = {};
+var 
+adds = {};
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'public'));
 app.use(express.static(__dirname + '/public'));
