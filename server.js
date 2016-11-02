@@ -3,15 +3,15 @@ var app = express();
 var path = require('path');
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
-var 
-adds = {};
+var adds = {};
+var uri = "mongodb://crump:kpsd225@ds141937.mlab.com:41937/heroku_jc9605s3";
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'public'));
 app.use(express.static(__dirname + '/public'));
 
 var db;
 
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database){
+mongodb.MongoClient.connect(process.env.MONGODB_URI|| uri, function(err, database){
 	if (err) {
 		console.log(err);
 		process.exit(1);
@@ -38,6 +38,11 @@ app.get('/', function(req, res){
 	var urls = db.collection('urls');
 	urls.find({}).toArray(function(err, doc){
 		if (err) throw err;
+		doc = doc.map(function(obj){
+			obj.short_url = obj.short_url.split('/')[1];
+			return obj;
+		});
+		// console.log(doc);
 		res.render('index', {adds: doc, host: host});
 	});
 });
