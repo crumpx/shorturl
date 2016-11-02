@@ -4,14 +4,13 @@ var path = require('path');
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 var adds = {};
-var uri = "mongodb://crump:kpsd225@ds141937.mlab.com:41937/heroku_jc9605s3";
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'public'));
 app.use(express.static(__dirname + '/public'));
 
 var db;
 
-mongodb.MongoClient.connect(process.env.MONGODB_URI|| uri, function(err, database){
+mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database){
 	if (err) {
 		console.log(err);
 		process.exit(1);
